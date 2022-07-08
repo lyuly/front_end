@@ -1,0 +1,71 @@
+#tra1 {
+  width: 0;
+  height: 0;
+  border-top: 50px solid tomato;
+  border-right: 50px solid transparent;
+  border-left: 50px solid transparent;
+}
+
+#tra2 {
+  width: 0;
+  height: 0;
+  border-bottom: 50px solid blue;
+  border-right: 50px solid transparent;
+  border-left: 50px solid transparent;
+}
+
+#tra3 {
+  width: 0;
+  height: 0;
+  border-left: 50px solid green;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+}
+
+#tra4 {
+  width: 0;
+  height: 0;
+  border-right: 50px solid orange;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+}
+
+#tra5 {
+  width: 0;
+  height: 0;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid red;
+}
+
+#shan1 {
+  border: 100px solid transparent;
+  width: 0;
+  height: 0;
+  border-radius: 100px;
+  border-top-color: red;
+}
+
+/* .square {
+  width: 10%;
+  height: 10vw;
+  background: orange;
+} */
+
+.square {
+  width: 10%;
+  overflow: hidden;
+  background: yellow;
+}
+
+.square::after {
+  content: '';
+  display: block;
+  margin-top: 100%;
+}
+
+.line {
+  width: 50%;
+  height: 2px;
+  border-top: solid blueviolet 2px;
+  transform: scale(0.5, 0.5);
+}

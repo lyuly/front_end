@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>纯css轮播</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    @keyframes linearUp {
+      0% {
+        margin-top: 0;
+      }
+      8% {
+        margin-top: 0;
+      }
+      10% {
+        margin-top: -1080px;
+      }
+      18% {
+        margin-top: -1080px;
+      }
+      20% {
+        margin-top: -2160px;
+      }
+      28% {
+        margin-top: -2160px;
+      }
+      30% {
+        margin-top: -3240px;
+      }
+      38% {
+        margin-top: -3240px;
+      }
+      40% {
+        margin-top: -4320px;
+      }
+      48% {
+        margin-top: -4320px;
+      }
+      50% {
+        margin-top: -5400px;
+      }
+      58% {
+        margin-top: -5400px;
+      }
+      60% {
+        margin-top: -6480px;
+      }
+      68% {
+        margin-top: -6480px;
+      }
+      70% {
+        margin-top: -7560px;
+      }
+      78% {
+        margin-top: -7560px;
+      }
+      80% {
+        margin-top: -8640px;
+      }
+      88% {
+        margin-top: -8640px;
+      }
+      90% {
+        margin-top: -9720px;
+      }
+      98% {
+        margin-top: -9720px;
+      }
+      100% {
+        margin-top: -10800px;
+      }
+    }
+
+    .box {
+      height: 1080px;
+      line-height: 1080px;
+      width: auto;
+      overflow: hidden;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      margin: auto;
+    }
+
+    .list {
+      height: 11880px;
+      animation: linearUp 10s linear infinite;
+    }
+
+    li {
+      height: 1080px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <ul class="list">
+      <li><img src="./image/2022-03-09.jpg"></li>
+      <li><img src="./image/2022-03-10.jpg"></li>
+      <li><img src="./image/2022-03-11.jpg"></li>
+      <li><img src="./image/2022-03-12.jpg"></li>
+      <li><img src="./image/2022-03-13.jpg"></li>
+      <li><img src="./image/2022-03-14.jpg"></li>
+      <li><img src="./image/2022-03-15.jpg"></li>
+      <li><img src="./image/2022-03-16.jpg"></li>
+      <li><img src="./image/2022-03-17.jpg"></li>
+      <li><img src="./image/2022-03-18.jpg"></li>
+      <li><img src="./image/2022-03-19.jpg"></li>
+    </ul>
+  </div>
+</body>
+</html>

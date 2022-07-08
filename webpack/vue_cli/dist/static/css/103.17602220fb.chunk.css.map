@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/103.17602220fb.chunk.css","mappings":"AACA,aACE,YAAF","sources":["webpack://vue_cli/./src/views/About/index.vue"],"sourcesContent":["\n.about-title {\n  color: violet;\n}  \n"],"names":[],"sourceRoot":""}

@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/math.chunk.js","mappings":"iHAAO,SAASA,EAAIC,EAAGC,GACrB,OAAOD,EAAIC,EAGN,SAASC,EAAIF,EAAGC,GACrB,OAAOD,EAAIC,E","sources":["webpack://webpack_code/./src/js/math.js"],"sourcesContent":["export function add(x, y) {\n  return x + y;\n}\n\nexport function mul(x, y) {\n  return x * y;\n}"],"names":["add","x","y","mul"],"sourceRoot":""}

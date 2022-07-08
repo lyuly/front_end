@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>两栏布局</title>
+  <style>
+
+    /* 利用浮动 */
+    /* .left {
+      float: left;
+      width: 200px;
+      height: 500px;
+      background: red;
+    }
+
+    .right {
+      height: 400px;
+      background: blue;
+      overflow: hidden;
+    } */
+
+    /* 利用容器flex */
+    /* .outer {
+      display: flex;
+      height: 44rem;
+    }
+
+    .left {
+      width: 200px;
+      background: sandybrown;
+    }
+
+    .right {
+      flex: 1;
+      background: skyblue;
+    } */
+
+    /* 利用绝对定位 */
+    /* .outer {
+      position: relative;
+      height: 100px;
+    }
+
+    .left {
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      background: tomato;
+    }
+
+    .right {
+      margin-left: 200px;
+      background: gold;
+      height: 100px;
+    } */
+
+    /* 利用绝对定位 */
+    .outer {
+      position: relative;
+      height: 100px;
+    }
+
+    .left {
+      width: 200px;
+      height: 100px;
+      background: tomato;
+    }
+
+    .right {
+      position: absolute;
+      left: 200px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100px;
+      background: gold;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+</body>
+</html>

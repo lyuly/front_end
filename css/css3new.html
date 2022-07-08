@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css3新特性</title>
+  <style>
+    .app {
+      isolation: isolate;
+      position: relative;
+    }
+
+    .circle {
+      border-radius: 50%;
+      mix-blend-mode: color-dodge;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+    }
+
+    .circle1 {
+      border: solid 1px blueviolet;
+    }
+
+    .circle2 {
+      border: solid 1px skyblue;
+      left: 50px;
+    }
+
+    .demo {
+      width: 140px;
+      height: 60px;
+      transform: translate(30px, 20px) rotate(20deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+  </div>
+
+  <div class="demo">嘻嘻嘻嘻</div>
+</body>
+</html>

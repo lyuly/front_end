@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/459.615f821905.chunk.css","mappings":"AACE,YACE,aAAe,CACf,cAAJ","sources":["webpack://vue_cli/./src/views/Home/index.vue"],"sourcesContent":["\n  .home-title {\n    color: deeppink;\n    font-size: 20px;\n  }\n"],"names":[],"sourceRoot":""}

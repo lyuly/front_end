@@ -1,0 +1,103 @@
+/* div {
+  width: 200px;
+  margin: 0 auto;
+} */
+.container {
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 16px;
+}
+
+/* 绝对定位的 div 居中 */
+/* div {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: pink;
+} */
+
+/* 水平垂直居中一 */
+/* div {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -250px;
+  background-color: pink;
+} */
+
+/* 水平垂直居中二 未知容器的宽高，利用 transform 属性 */
+/* div {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: pink;
+} */
+
+/* 水平垂直居中三 */
+/* 利用flex布局实际使用时应考虑兼容性 */
+/* .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerdiv {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+} */
+
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 0;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.container::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.box {
+  display: inline-block;
+  width: 500px;
+  height: 400px;
+  background-color: pink;
+  white-space: normal;
+  vertical-align: middle;
+}
+
+/* 
+（1）我们可以利用margin: 0 auto 来实现元素的水平居中。
+*/
+
+/* 
+  画三角形
+*/
+
+#demo {
+  width: 0;
+  height: 0;
+  border-top: 20px solid red;
+  border-left:  20px solid transparent;
+  border-right: 20px solid transparent;
+}

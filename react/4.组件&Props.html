@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>组件&Props</title>
+  <!-- 引入react核心库 -->
+  <script src="./js/react.development.js" crossorigin></script>
+  <!-- 引入react-dom，用于支持react操作DOM -->
+  <script src="./js/react-dom.development.js" crossorigin></script>
+  <!-- 引入babel，用于将jsx转为js -->
+  <script src="./js//babel.min.js"></script>
+</head>
+<body>
+
+  <!-- 写一个容器 -->
+  <div id="root"></div>
+
+  <!-- 此处一定要写babel -->
+  <script type="text/babel">
+
+    // js函数
+    /* function Welcome(props) {
+      // console.log(props);
+      return <h1>你好，{props.name}</h1>;
+    } */
+
+    // 组合组件
+    /* function App() {
+      return (
+        <div>
+          <Welcome name="张三" />
+          <Welcome name="李四" />
+          <Welcome name="王五" />
+        </div>
+      );
+    } */
+
+    // ES6语法
+    /* class Welcome extends React.Component {
+      render() {
+        return <h1>你好，{this.props.name}</h1>;
+      }
+    } */
+
+    /* const element = <Welcome name="猪猪" />;
+    ReactDOM.render(
+      <App/>,
+      document.getElementById('root')
+    ); */
+
+    // props的只读性
+    // 纯函数
+    function sum(a, b) {
+      return a + b;
+    }
+
+    // 非纯函数
+    function withdraw(account, amount) {
+      account.total -= amount;
+    }
+
+    ReactDOM.render(
+      <h1>{sum(1,2)}</h1>,
+      document.getElementById('root')
+    );
+
+  </script>
+</body>
+</html>
