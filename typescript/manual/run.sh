@@ -1,9 +1,9 @@
 #!/bin/sh
-echo "start typescript 🤔"
-ts-node test.ts > ts.log
-echo "ended typescript 🍭"
-echo "waiting for 5s 😄"
+echo "typescript测试开始"
+ts-node test.ts > ts_test.log
+echo "typescript测试结束🍭"
+echo "等待5秒😄"
 sleep 5
-echo "start javascript 🤔"
-node test.js > js.log
-echo "ended javascript 🥰"
+echo "javascript测试开始🤔"
+node test.js > js_test.log
+echo "javascript测试结束🥰"
