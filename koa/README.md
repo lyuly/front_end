@@ -1,0 +1,2 @@
+- nodemon自动重启服务
+- dotenv读取根目录的`.env`文件，将配置写在`process.env`中
