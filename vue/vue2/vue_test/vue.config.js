@@ -1,9 +1,27 @@
+const path = require('path')
+
+function resolve(dir) {
+  path.join(__dirname, dir);
+}
+
 module.exports = {
+  lintOnSave: false,
   pages: {
     index: {
       // 入口
       entry: 'src/main.js',
+      template: 'public/index.html',
+      filename: 'index.html',
+      chunks: ['chunk-vendors', 'chunk-common', 'index']
     },
+  },
+  outputDir: 'dist',
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@': resolve('src')
+      }
+    }
   },
   // 开启代理服务器
   /* devServer:{
