@@ -1,5 +1,5 @@
 // 随机生成number类型数组
-import randomArr from "../randomArr";
+import randomArr from "../../randomArr";
 
 // 切片
 const partition = (a: number[], lo: number, hi: number): number => {

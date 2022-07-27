@@ -5,7 +5,7 @@
 
 */
 
-import randomArr from '../randomArr'
+import randomArr from '../../randomArr'
 
 const bubbleSort = (arr: number[]) => {
   for (let i: number = 0; i < arr.length; i++) {
