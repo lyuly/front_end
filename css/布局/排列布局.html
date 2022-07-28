@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>排列布局</title>
+  <style>
+    body {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .visual {
+      height: 100px;
+      width: 100%;
+      background: lightblue;
+      margin: 0.5rem 0;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: lightsalmon;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Card 1</h1>
+    <p>111</p>
+    <div class="visual"></div>
+  </div>
+  <div class="card">
+    <h1>Card 2</h1>
+    <p>222</p>
+    <div class="visual"></div>
+  </div>
+  <div class="card">
+    <h1>Card 3</h1>
+    <p>333</p>
+    <div class="visual"></div>
+  </div>
+</body>
+</html>

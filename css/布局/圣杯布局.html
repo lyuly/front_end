@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>圣杯布局</title>
+  <style>
+    body {
+      display: grid;
+      height: 100vh;
+      grid-template: auto 1fr auto / auto 1fr auto;
+    }
+
+    header {
+      background-color: lightblue;
+      padding: 2rem;
+      grid-column: 1 / 4;
+      text-align: center;
+    }
+
+    .left {
+      background: lightcoral;
+      grid-column: 1 / 2;
+    }
+
+    main {
+      background: lightgoldenrodyellow;
+      grid-column: 2 / 3;
+    }
+
+    .container {
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .right {
+      background: limegreen;
+      grid-column: 3 / 4;
+    }
+
+    footer {
+      background-color: lightgray;
+      padding: 2rem;
+      text-align: center;
+      grid-column: 1 / 4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>宋词元曲</h1>
+  </header>
+  <div class="left">左边栏</div>
+  <main>
+    <div class="container">
+      <p>人闲桂花落，</p>
+      <p>夜静春山空。</p>
+      <p>月出惊山鸟，</p>
+      <p>时鸣春涧中。</p>
+    </div>
+  </main>
+  <div class="right">右边栏</div>
+  <footer><a href="https://lyuly.com" style="text-decoration: none;">lyuly.com@2022</a></footer>
+</body>
+</html>
