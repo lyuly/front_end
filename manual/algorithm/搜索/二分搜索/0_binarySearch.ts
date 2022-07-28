@@ -2,7 +2,7 @@
 二分搜索
 */
 
-import randomArr from '../../randomArr'
+// import randomArr from '../../randomArr'
 
 const sort = (arr: number[], target: number) => {
   if (arr.length === 0) return - 1;
