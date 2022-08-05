@@ -9,12 +9,26 @@
     .parent {
       display: grid;
       place-items: center;
+      resize: both;
+      width: 500px;
+      height: 500px;
+      background: skyblue;
+      overflow: hidden;
+    }
+
+    .child {
+      padding: 0.5rem;
+      border-radius: 10px;
+      border: 1px solid tomato;
+      background: lightpink;
+      font-size: 2rem;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="parent">
-    面壁十年图破壁，难酬涛海亦英雄
+    <div class="child">(：</div>
   </div>
 </body>
 </html>
