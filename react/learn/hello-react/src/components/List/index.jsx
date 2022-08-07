@@ -1,0 +1,26 @@
+import { Component } from "react";
+
+const ListItem = (props) => {
+  return <li>{props.value}</li>
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <ListItem key={number.toString()} value={number}/>
+  );
+  return (
+    <ul>{listItems}</ul>
+  )
+}
+
+const numbers = [1, 2, 3, 4 ,5];
+
+export default class List extends Component {
+
+  render() {
+    return (
+      <NumberList numbers={numbers} />
+    )
+  }
+}
