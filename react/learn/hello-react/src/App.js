@@ -10,6 +10,8 @@ import Blog from "./components/Blog";
 import Nameform from "./components/NameForm";
 import EssayForm from "./components/EssayForm";
 import FlavorForm from "./components/FlavorForm";
+import Reservation from "./components/Reservation";
+import Calculator from "./components/Calculator";
 
 export default class App extends Component {
   render() {
@@ -27,6 +29,8 @@ export default class App extends Component {
           <hr/>
           <EssayForm/>
           <FlavorForm/>
+          <Reservation/>
+          <Calculator/>
         </div>
       </React.StrictMode>
     )
