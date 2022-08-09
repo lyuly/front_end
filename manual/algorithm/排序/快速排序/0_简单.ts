@@ -1,3 +1,4 @@
+#!/usr/bin/env ts-node
 // 随机生成number类型数组
 import randomArr from "../../randomArr"
 
@@ -14,6 +15,6 @@ const quickSort = (arr: number[]): number[] => {
 }
 
 console.time('quickSort');
-const arr: number[] = randomArr(10);
-console.log(quickSort(arr));
+const arr: number[] = randomArr(1000000);
+quickSort(arr);
 console.timeEnd('quickSort');
