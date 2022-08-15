@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 /* 
 1.比较相邻元素，第一个比第二个大，就交换
 2.互相交换直到最后
@@ -16,14 +17,13 @@ const bubbleSort = (arr: number[]) => {
         flag = true;
       }
     }
-    console.log(`${i}: ${arr}`);
     if (!flag)
       break;
   }
-};
+  return arr;
+}
 
 console.time('bubbleSort')
 const arr = randomArr(10)
-bubbleSort(arr)
-console.log(arr)
+console.log(bubbleSort(arr))
 console.timeEnd('bubbleSort')

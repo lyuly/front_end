@@ -21,5 +21,7 @@ const quickSort = (a: number[], lo: number, hi: number): number[] => {
   return a;
 }
 
+console.time('quickSort');
 const arr = [1, 3, 2, 5, 4];
 console.log(quickSort(arr, 0, arr.length - 1));
+console.timeEnd('quickSort');

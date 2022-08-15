@@ -5,6 +5,7 @@
 const fs = require('fs');
 const line = fs.readFileSync('a.txt', 'utf-8').toString().split(/\r\n|\r|\n/);
 const [a, b] = line[0].split(' ');
+console.log(line);
 // console.log(a);
 // console.log('--------------');
 // console.log(b);

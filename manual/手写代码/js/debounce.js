@@ -18,3 +18,5 @@ function debounce(fn, wait) {
     }, wait);
   }
 }
+
+module.exports = debounce
