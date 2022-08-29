@@ -239,7 +239,526 @@ console.log(newName1);
 console.log(newName2);
 ```
 
+#### 展开运算符
+
+```typescript
+let first = [1, 2];
+let second = [3, 4];
+let bothPlus = [0, ...first, ...second, 5];
+
+console.log(bothPlus); // [ 0, 1, 2, 3, 4, 5 ]
+```
 
 
 
+## 接口
+
+### 接口初探
+
+接口的定义
+
+```typescript
+interface LabelledValue {
+  label: string;
+}
+
+function printLabel(labelledObj: LabelledValue) {
+  console.log(labelledObj.label);
+}
+
+let myObj = {size: 10, label: "Size 10 Object"};
+printLabel(myObj);
+```
+
+### 可选属性
+
+用`?`表示可选
+
+```typescript
+interface SquareConfig {
+  color?: string;
+  width?: number;
+}
+
+function createSquare(config: SquareConfig): {color: string, area: number} {
+  let newSquare = {color: 'white', area: 100};
+  if (config.color) {
+    newSquare.color = config.color;
+  }
+
+  if (config.width) {
+    newSquare.area = config.width * config.width;
+  }
+
+  return newSquare;
+}
+
+let mySquare = createSquare({color: 'black'});
+console.log(mySquare);
+```
+
+### 只读属性
+
+加上`readonly`即可
+
+```typescript
+interface Point {
+  readonly x: number;
+  readonly y: number;
+}
+
+let p1: Point = {x: 10, y: 10};
+p1.x = 5; // Cannot assign to 'x' because it is a read-only property
+
+let a: number[] = [1, 2, 3, 4];
+let ro: ReadonlyArray<number> = a;
+ro[0] = 12; // error
+ro.push(5); // error
+ro.length = 100; // error
+a = ro; // error
+
+a = ro as number[]; // correct，用类型断言as修改属性
+```
+
+### 额外的属性检查
+
+可以使用类型断言`as`，也能使用索引签名
+
+```typescript
+interface Person {
+  name?: string;
+  age?: number;
+}
+
+function fn(config: Person): {name: string, age: number} {
+  let newP = {name: 'pig', age: 1};
+  if (config.name) {
+    newP.name = config.name;
+  }
+
+  if (config.age) {
+    newP.age = config.age;
+  }
+
+  return newP;
+}
+
+let p = fn({name: 'fff', age: 18} as Person);
+console.log(p);
+```
+
+### 函数类型
+
+在`interface`里定义
+
+```typescript
+interface SearchFunc {
+  (source: string, subString: string): boolean;
+}
+
+let mySearch: SearchFunc;
+// boolean类型
+mySearch = function(source: string, subString: string) {
+  let result = source.search(subString);
+  return result > -1;
+}
+
+interface AddFunc {
+  (a: number, b: number): number;
+}
+
+// number类型
+const sum: AddFunc = (a: number, b: number) => {
+  return a + b;
+}
+
+console.log(sum(1, 2));
+```
+
+### 可索引的类型
+
+```typescript
+// 用number去索引StringArray时返回的是string类型的返回值
+interface StringArray {
+  [index: number]: string;
+}
+
+let myArray: StringArray;
+myArray = ["Bob", "Fred"];
+```
+
+### 继承接口
+
+从一个接口里复制成员到另一个接口里，可以更灵活地将接口分割到可重用的模块里
+
+一个接口可以继承多个接口，创建出多个接口的合成接口。
+
+```typescript
+interface Shape {
+  color: string;
+}
+
+interface PenStroke {
+  penWidth: number;
+}
+
+interface Square extends Shape, PenStroke {
+  sideLength: number;
+}
+
+let square = <Square>{};
+square.color = 'blue';
+square.sideLength = 10;
+square.penWidth = 5.0;
+```
+
+
+
+## 类
+
+### 类
+
+```typescript
+class Greeter {
+  greeting: string;
+
+  constructor(message: string) {
+    this.greeting = message;
+  }
+
+  greet() {
+    return "Hello, " + this.greeting;
+  }
+}
+
+let greeter = new Greeter("world");
+console.log(greeter.greet());
+```
+
+### 继承
+
+使用继承来扩展现有的类
+
+Dog是一个派生类（子类），Animal是一个基类（超类）
+
+```typescript
+class Animal {
+  move(distanceInMeters: number = 0) {
+    console.log(`Animal moved ${distanceInMeters}m.`);
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log('Woof! Woof!');
+  }
+}
+
+const dog = new Dog();
+dog.bark();
+dog.move(10);
+dog.bark();
+```
+
+### 公共私有受保护修饰符
+
+`public` 指定成员是可见的
+
+```typescript
+class Animal {
+  public name: string;
+  
+  public constructor(theName: string) {
+    this.name = theName;
+  }
+  
+  public move(distanceInMeters: number) {
+    console.log(`${this.name} moved ${distanceInMeters}m.`);
+  }
+}
+```
+
+`private` 指定成员在类外部不可见，继承的也是私有的
+
+```typescript
+class School {
+  private name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+```
+
+`protected` 在派生类中仍然可以访问，构造函数被标记为`protected`，不能在类外部访问，但是可以被继承
+
+```typescript
+class Person {
+  protected name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+class Employee extends Person {
+  private department: string;
+
+  constructor(name: string, department: string) {
+    super(name)
+    this.department = department;
+  }
+
+  public getElevatorPitch() {
+    return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+  }
+}
+
+let howard = new Employee("howard", 'Sales');
+console.log(howard.getElevatorPitch());
+console.log(howard.name);
+```
+
+**readonly**修饰符表明属性是只读的
+
+### 存取器
+
+通过getters/setters来读取成员
+
+```typescript
+class School {
+  private name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+  
+  public getName(): string {
+    return this.name;
+  }
+
+  public setName(name: string): void {
+    this.name = name;
+  }
+    
+}
+```
+
+### 静态属性
+
+使用`类名.`来访问属性
+
+### 抽象类
+
+抽象类作为其它派生类的基类使用。
+
+
+
+## 函数
+
+### 函数类型
+
+参数类型和返回值类型
+
+```typescript
+function add(x: number, y: number): number {
+  return x + y;
+}
+
+let myAdd = function(x: number, y: number): number {
+  return x + y;
+}
+```
+
+**推断类型**
+
+在赋值语句的一边指定了类型但是另一边没有类型的话，ts会自动识别出类型
+
+```typescript
+let myAdd = function(x: number, y: number): number {
+  return x + y;
+}
+
+let myAdd: (x: number, y: number) => number =
+    function(x, y) {
+      return x + y;
+    }
+```
+
+### 可选参数
+
+`?`可选
+
+```typescript
+function buildName(firstName: string, lastName?: string): string {
+  return firstName + ' ' + lastName;
+}
+
+let name = buildName('Bob');
+```
+
+### 重载
+
+参数名相同，类型不同
+
+```typescript
+#!/usr/bin/env bun
+
+function Person(p: {name: string, age: number}[]): number;
+function Person(name: string, age: number);
+function Person(p): any {
+  if (typeof p === 'object') {
+    let ans = Math.floor(Math.random() * p.age);
+    return ans;
+  }
+
+  else if (typeof p === 'number') {
+    let ans = Math.floor(p / 13);
+    return { p: ans, age: p};
+  }
+}
+```
+
+
+
+## 泛型
+
+### 泛型hello world
+
+```typescript
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let str = identity('Hello, World!'); // 自动推断类型
+console.log(str);
+```
+
+### 使用泛型
+
+```typescript
+function loggingIdentity<T>(arg: Array<T>): Array<T> {
+  console.log(arg.length);
+  return arg;
+}
+
+const arr = loggingIdentity([1, 2, 3, 4, 5]);
+console.log(`arr: ${arr}`);
+```
+
+泛型类型
+
+```typescript
+interface GenericIdentityFn {
+  <T>(arg: T): T;
+}
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let myIdentity: GenericIdentityFn = identity;
+
+// 泛型接口
+interface Info<T> {
+  (arg: T): T;
+}
+
+function build<T>(age: T): T {
+  return age;
+}
+
+let myAge: Info<number> = build;
+console.log(myAge(10));
+```
+
+### 泛型类
+
+直接在类名后面加泛型即可
+
+```typescript
+class Calculator<T> {
+  initValue: T;
+  add: (x: T, y: T) => T;
+}
+
+let calculator = new Calculator<number>();
+calculator.initValue = 0;
+calculator.add = function(a, b) {
+  return a + b;
+}
+
+console.log(calculator.add(1, 2));
+```
+
+**泛型约束中使用类型函数**
+
+```typescript
+function getProperty(obj: T, key: K) {
+  return obj[key];
+}
+
+let x = { a: 1, b: 2, c: 3, d: 4};
+console.log(getProperty(x, 'a'));
+console.log(getProperty(x, 'm'));
+```
+
+**泛型中使用类类型**
+
+
+
+## 枚举
+
+### 数字枚举
+
+`Up`是1，`Down`是2，`Left`是3，`Right`是4
+
+```typescript
+enum Direction {
+  Up = 1,
+  Down,
+  Left,
+  Right
+}
+
+enum Direction {
+  Up, // 0
+  Down, // 1
+  Left, // 2
+  Right // 3
+}
+```
+
+### 字符串枚举
+
+```typescript
+enum Direction {
+  Up = 'up',
+  Down = 'down',
+  Left = 'left',
+  Right = 'right',
+}
+
+console.log(Direction.Up);
+```
+
+### 异构枚举
+
+混合数字和字符
+
+```typescript
+enum BooleanLikeHeterogeneousEnum {
+  No = 0,
+  Yes = 'YES'
+}
+```
+
+### 外部枚举
+
+```typescript
+declare enum Enum {
+  A = 1,
+  B,
+  C = 2
+}
+```
 

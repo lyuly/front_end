@@ -22,6 +22,7 @@ let obj = {
   c: 'bar'
 };
 
+// 属性重命名
 let { b: newName1, c: newName2 } = obj;
 console.log(newName1);
 console.log(newName2);
