@@ -10,7 +10,7 @@ call函数实现:
 */
 
 Function.prototype.myCall = function(context) {
-  if (typeof context !== 'function') {
+  if (typeof this !== 'function') {
     console.error('type error');
   }
 

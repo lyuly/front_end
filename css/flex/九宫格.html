@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>grid实现九宫格</title>
+  <title>flex实现九宫格</title>
   <style>
-    .container {
-      display: grid;
-      grid-template-columns: repeat(3, 100px);
+    .app {
+      display: flex;
+      flex-wrap: wrap;
       place-content: center;
     }
+
     .item {
-      font-size: 4em;
-      text-align: center;
+      width: 30%;
+      padding-top: 30%;
+      margin-top: 3%;
+      border-radius: 10%;
       border: 1px solid #e5e4e9;
     }
+
     .item-1 {
       background-color: #ef342a;
     }
@@ -35,7 +39,7 @@
       background-color: #f8d29d;
     }
     .item-7 {
-      background-color: purple;
+      background-color: burlywood;
     }
     .item-8{
       background-color: aqua;
@@ -46,7 +50,7 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="app">
     <div class="item item-1">1</div>
     <div class="item item-2">2</div>
     <div class="item item-3">3</div>

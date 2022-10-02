@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-let arr = [5, 2, 1, 4, 3];
 
 const insertSort = (a) => {
   if (!a) return;
@@ -10,7 +9,12 @@ const insertSort = (a) => {
     }
     a[j + 1] = key;
   }
-  return a;
 }
 
-console.log(insertSort(arr));
+console.time('insertSort');
+let arr = [];
+for (let i = 0; i < 100; i++)
+  arr.push(Math.round(Math.random() * 10));
+insertSort(arr);
+// console.log(arr);
+console.timeEnd('insertSort');
