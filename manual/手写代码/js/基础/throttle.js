@@ -1,18 +1,15 @@
 /* 
-节流：在指定的时间内只能触发一次
+节流：在固定的时间内只能被触发一次
 */
 
-function throttle(fn, delay) {
-  let cur = Date.now();
+const throttle = (fn, delay) => {
+  let pre = Date.now();
 
   return function() {
-    let now = Date.now(), context = this, args = arguments;
-
-    if (now - cur >= delay) {
-      cur = Date.now();
+    let cur = Date.now(), args = arguments, context = this;
+    if (cur - pre >= delay) {
+      pre = Date.now();
       return fn.apply(context, args);
     }
   }
 }
-
-module.exports = throttle

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>水平垂直居中</title>
+
+<style>
+    #app {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background: red;
+    }
+
+    .child {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background: blue;
+    }
+</style>
+</head>
+<body>
+    <div id="app">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

@@ -8,17 +8,22 @@
   <style>
     #box {
       width: 300px;
-      height: 300px;
+      height: 200px;
       background: #ddd;
-      position: relative;
     }
 
     #child {
+      width: 100px;
+      height: 100px;
       background: orange;
-      position: absolute;
-      top: 50%;
-      transform: translate(0, -50%);
     }
+    /* 
+      垂直居中的方法
+      （1）绝对定位+top+left+transform
+      (2) 绝对定位+top+left+right+bottom+margin
+      (3) display: flex / grid
+      (4) 绝对定位+负margin-top+margin-left
+    */
   </style>
 </head>
 <body>

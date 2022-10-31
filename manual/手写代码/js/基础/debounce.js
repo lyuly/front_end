@@ -1,13 +1,12 @@
 /* 
-防抖：事件在n秒后被触发，如果在这n秒内又被触发则重新计时
+防抖：事件在n秒后被触发，如果在n秒内又被触发则重新计时
 */
 
-function debounce(fn, wait) {
+const debounce = (fn, wait) => {
   let timer = null;
 
   return function() {
     let context = this, args = arguments;
-
     if (timer) {
       clearTimeout(timer);
       timer = null;
@@ -18,5 +17,3 @@ function debounce(fn, wait) {
     }, wait);
   }
 }
-
-module.exports = debounce

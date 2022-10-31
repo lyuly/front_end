@@ -18,5 +18,24 @@ const inOrder = (node) => {
   inOrder(node.right);
 }
 
-inOrder(root);
+// inOrder(root);
+// console.log(res);
+
+const inOrder2 = (root) => {
+  if (!root)  return;
+  const stk = [];
+  while (stk.length > 0 || root) {
+    while (root) {
+      stk.push(root);
+      root = root.left;
+    }
+    if (stk.length > 0) {
+      root = stk.pop();
+      res.push(root.val);
+      root = root.right;
+    }
+  }
+}
+
+inOrder2(root);
 console.log(res);

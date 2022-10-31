@@ -1,4 +1,4 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 
 class ListNode {
   constructor(key, value) {
@@ -11,6 +11,7 @@ class ListNode {
 
 class LRUCache {
   constructor(capacity) {
+    // 存容量
     this.capacity = capacity
     this.hash = {}
     this.count = 0

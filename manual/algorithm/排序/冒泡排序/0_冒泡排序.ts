@@ -6,7 +6,7 @@
 
 */
 
-import randomArr from '../../randomArr'
+import randomArr from "../../randomArr";
 
 const bubbleSort = (arr: number[]) => {
   for (let i: number = 0; i < arr.length; i++) {
@@ -17,13 +17,12 @@ const bubbleSort = (arr: number[]) => {
         flag = true;
       }
     }
-    if (!flag)
-      break;
+    if (!flag) break;
   }
   return arr;
-}
+};
 
-console.time('bubbleSort')
-const arr = randomArr(10)
-console.log(bubbleSort(arr))
-console.timeEnd('bubbleSort')
+console.time("bubbleSort");
+const arr = randomArr(10);
+console.log(bubbleSort(arr));
+console.timeEnd("bubbleSort");
