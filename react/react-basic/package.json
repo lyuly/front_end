@@ -36,6 +36,8 @@
     ]
   },
   "devDependencies": {
+    "antd": "^4.23.6",
+    "prop-types": "^15.8.1",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0"
   }

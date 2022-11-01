@@ -4,7 +4,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 // 应用全局样式文件
-import './index.sass'
+import './index.css'
 // 引入根组件
 import App from './App'
 
