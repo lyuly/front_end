@@ -17,14 +17,26 @@ Boolean()方法
 其他是true
 */
 
-'123' == 123
-'' == null
-'' == 0
-[] == 0
-[] == ''
-[] == ![]
-null == undefined
-Number(null)
-Number('')
-parseInt('')
-{}+10
+'123' == 123 // true
+'' == null // true
+'' == 0 // true
+[] == 0 // true
+[] == '' // true
+[] == ![] // false
+null == undefined // true
+Number(null) // 0
+Number('') // 0
+parseInt('') // NaN
+{}+10 // '10'
+let obj = {
+  [Symbol.toPrimitive]() {
+      return 200;
+  },
+  valueOf() {
+      return 300;
+  },
+  toString() {
+      return 'Hello';
+  }
+}
+console.log(obj + 200); // 400
