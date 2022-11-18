@@ -31,10 +31,10 @@
 var fs = require("fs");
 
 // 打开文件
-const fd = fs.openSync('./test.txt', 'w');
+const fd = fs.openSync('./02.txt', 'w')
 
 // 向文件中写入内容
-fs.writeSync(fd, '今天天气真不错~~~', 20);
+fs.writeSync(fd, '今天天气真不错😄', 20)
 
 // 关闭文件
-fs.closeSync(fd);
+fs.closeSync(fd)

@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env node
 
 /* 
 n <= 10，采用插入排序
@@ -19,25 +19,25 @@ const insertSort = (arr) => {
 }
 
 const quickSort = (arr, lo, hi) => {
-  const parition = (arr, lo, hi) => {
-    let v = arr[lo], i = lo, j = hi + 1
-    while (true) {
-      while (arr[++i] < v)  if (i === hi) break
-      while (arr[--j] > v) if (j === lo)  break
-      if (i >= j) {
-        break
-      }
-      [arr[i], arr[j]] = [arr[j], arr[i]]
+  if (hi <= lo) return
+
+  let i = lo + 1, lt = lo, gt = hi, v = a[lo]
+
+  while (i <= gt) {
+    const cmp = a[i] < v ? -1 : 1
+    if (cmp < 0) {
+      [arr[i], arr[lt]] = [arr[lt], arr[i]]
+      i++
+      lt++
+    } else if (cmp > 0) {
+      [arr[i], arr[gt]] = [arr[gt], arr[i]]
+      gt--
+    } else {
+      i++
     }
-    [arr[j], arr[lo]] = [arr[lo], arr[j]]
-    return j
   }
-
-  if (lo >= hi) return
-
-  const j = parition(arr, lo, hi)
-  quickSort(arr, lo, j - 1)
-  quickSort(arr, j + 1, hi)
+  quickSort(arr, lo, lt - 1)
+  quickSort(arr, gt + 1, hi)
 }
 
 const sort = (arr) => {
@@ -51,3 +51,5 @@ const sort = (arr) => {
 
 const a = [2, 5, 3, 2, 1, 11, 19, 4, 10, 9, 6, 0]
 console.log(sort(a))
+
+console.log(process.memoryUsage())

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "yarn dev",
+    "start": "pnpm dev",
     "dev": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js"
   },

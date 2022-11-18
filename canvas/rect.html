@@ -7,18 +7,48 @@
   <title>长方形</title>
 </head>
 <body>
-  <canvas id="app" width="100" height="100"></canvas>
+  <canvas id="app" width="500px" height="500px"></canvas>
 
   <script type="text/javascript">
     /** @type {HTMLCanvasElement} */ 
-    var canvas = document.getElementById('app')
-    if (canvas.getContext) {
-      var ctx = canvas.getContext('2d')
-      ctx.fillStyle = 'skyblue'
-      ctx.fillRect(0, 0, 100, 100)
-      ctx.strokeStyle = 'black'
-      ctx.strokeRect(0, 0, 100, 100)
+
+    const canvas = document.getElementById("app")
+    let ctx = canvas.getContext('2d')
+
+    const square = {
+      x: 0,
+      y: 0,
+      vx: 0,
+      vy: 1,
+      width: 50,
+      height: 50,
+      color: 'tomato',
+      draw: function() {
+        ctx.beginPath()
+        ctx.fillRect(this.x, this.y, this.width, this.height)
+        ctx.closePath()
+        ctx.fillStyle = this.color
+        ctx.fill()
+      }
     }
+
+    function draw() {
+     ctx.clearRect(0, 0, canvas.width, canvas.height)
+     square.draw()
+     square.x += square.vx
+     square.y += square.vy
+     raf = window.requestAnimationFrame(draw)
+    }
+
+    canvas.addEventListener('mouseover', function(e) {
+      raf = window.requestAnimationFrame(draw)
+    })
+
+    canvas.addEventListener('mouseout', function(e) {
+      window.cancelAnimationFrame(raf)
+    })
+
+    square.draw()
   </script>
 </body>
 </html>

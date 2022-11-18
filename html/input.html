@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input</title>
+</head>
+<body>
+  <input type="text">
+
+  <p id="onchange"></p>
+
+  <p id="onblur"></p>
+
+  <script type="text/javascript">
+    const input = document.querySelector('input')
+
+    input.addEventListener('change', updateValue)
+    input.addEventListener('blur', updateBlur)
+
+    function updateValue(e) {
+      const log = document.getElementById('onchange')
+      log.textContent = e.target.value
+    }
+
+    function updateBlur(e) {
+      const element = document.getElementById('onblur')
+      element.textContent = e.target.value
+    }
+  </script>
+</body>
+</html>

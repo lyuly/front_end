@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>方块移动</title>
+</head>
+<body>
+  <canvas id="app" width="500px" height="500px"></canvas>
+
+  <script type="text/javascript">
+    /** @type {HTMLCanvasElement} */ 
+    const canvas = document.getElementById('app')
+    const ctx = canvas.getContext('2d')
+
+    const square = {
+      x: 0,
+      y: 0,
+      width: 50,
+      height: 50,
+      vx: 1,
+      vy: 0,
+      color: 'skyblue',
+      draw: function() {
+        ctx.beginPath()
+        ctx.fillRect(this.x, this.y, this.width, this.height)
+        ctx.closePath()
+        ctx.fillStyle = this.color
+        ctx.fill()
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      square.draw()
+      square.x += square.vx
+      square.y += square.vy
+      raf = window.requestAnimationFrame(draw)
+    }
+
+    canvas.addEventListener('mouseover', function(e) {
+      raf = window.requestAnimationFrame(draw)
+    })
+
+    canvas.addEventListener('mouseout', function(e) {
+      window.cancelAnimationFrame(raf)
+    })
+
+    square.draw()
+  </script>
+</body>
+</html>

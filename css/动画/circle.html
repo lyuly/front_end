@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>圆</title>
+</head>
+<body>
+  <canvas id="app" width="500" height="1200"></canvas>
+
+  <script type="text/javascript">
+    /** @type {HTMLCanvasElement} */ 
+    const canvas = document.getElementById('app')
+    const ctx = canvas.getContext('2d')
+
+    const circle = {
+      x: 50,
+      y: 50,
+      vx: 0,
+      vy: 0,
+      r: 20,
+      start: 0,
+      end: 2 * Math.PI,
+      draw: function() {
+        ctx.beginPath()
+        ctx.arc(this.x, this.y, this.r, this.start, this.end)
+        ctx.closePath()
+        ctx.fillStyle = 'yellow'
+        ctx.fill()
+      }
+    }
+
+    const cur = new Date()
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      circle.draw()
+      const now = new Date()
+      // circle.vx = 9.8 * (now - cur) / 1000
+      circle.x += circle.vx
+      circle.vy = 9.8 * (now - cur) / 1000
+      circle.y += circle.vy
+      raf = window.requestAnimationFrame(draw)
+    }
+
+    canvas.addEventListener('mouseover', function(e) {
+      raf = window.requestAnimationFrame(draw)
+    })
+
+    canvas.addEventListener('mouseout', function(e) {
+      window.cancelAnimationFrame(raf)
+    })
+
+    circle.draw()
+  </script>
+</body>
+</html>
