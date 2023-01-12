@@ -1,0 +1,25 @@
+{
+  "name": "koa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.21.3"
+  },
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "@koa/router": "^12.0.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.1",
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "mysql2": "^2.3.3"
+  }
+}

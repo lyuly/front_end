@@ -2,9 +2,12 @@
 
 import axios from "axios"
 import { getToken } from "./token"
+// import '@/mock/api'
+import { history } from "./history"
 
 const http = axios.create({
-  baseURL: 'http://example.com',
+  // baseURL: 'http://example.com',
+  baseURL: 'http://geek.itheima.net/v1_0',
   timeout: 5000
 })
 

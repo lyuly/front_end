@@ -1,5 +1,5 @@
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { Card, Checkbox, Button, Form, Input } from 'antd'
+import { Card, Checkbox, Button, Form, Input, message } from 'antd'
 import logo from '@/assets/logo.jpg'
 import './index.sass'
 import { useStore } from '@/store'
@@ -12,9 +12,14 @@ const Login = () => {
   const token = loginStore.token
   const navigate = useNavigate()
 
-  const onFinish = (values) => {
-    loginStore.getToken(values)
-    navigate('/', { replace: true })
+  const onFinish = async values => {
+    const { mobile, code, remember } = values
+    try {
+      await loginStore.getToken({mobile, code, remember})
+      navigate('/', { replace: true })
+    } catch (e) {
+      message.error(e.response?.data?.message || '登录失败')
+    }
   }
 
   useEffect(() => {
@@ -32,21 +37,21 @@ const Login = () => {
       <Card className='login-container'>
         <img className='login-logo' src={logo} alt=""/>
         <Form
-          initialValues={{ remember: true }}
+          initialValues={{ mobile: '13911111111', code: '246810', remember: true }}
           validateTrigger={['onBlur', 'onChange']}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
         >
           <Form.Item
-            name='username'
+            name='mobile'
             rules={[
               {
                 required: true,
-                message: '请输入用户名'
+                message: '请输入手机号'
               },
               {
-                pattern: /^[a-zA-Z0-9]{5,16}$/,
-                message: '请输入正确的用户名，由字母数字组成，至少5位',
+                pattern: /^1[3-9]\d{9}$/,
+                message: '请输入正确的手机号',
                 validateTrigger: 'onBlur'
               }
             ]}
@@ -54,19 +59,19 @@ const Login = () => {
             <Input
               size='large'
               prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder='请输入用户名'/>
+              placeholder='请输入手机号'/>
           </Form.Item>
 
           <Form.Item
-            name='password'
+            name='code'
             rules={[
               {
                 required: true,
-                message: '请输入密码'
+                message: '请输入验证码'
               },
               {
-                len: 8,
-                message: '请输入8位密码',
+                len: 6,
+                message: '请输入6位验证码',
                 validateTrigger: 'onBlur'
               }
             ]}
@@ -75,7 +80,7 @@ const Login = () => {
               size='large'
               prefix={<LockOutlined className="site-form-item-icon" />}
               type='password'
-              placeholder='请输入密码'/>
+              placeholder='请输入验证码'/>
           </Form.Item>
 
           <Form.Item

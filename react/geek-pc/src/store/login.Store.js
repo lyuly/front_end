@@ -1,6 +1,5 @@
 import { makeAutoObservable } from "mobx"
-import { http, setToken, getToken } from "@/utils"
-import '@/mock/api'
+import { http, setToken, getToken, removeToken } from "@/utils"
 import { message } from 'antd'
 
 class LoginStore{
@@ -12,16 +11,18 @@ class LoginStore{
   }
 
   getToken = async(form) => {
-    const res = await http.post('login', form)
-    if (res.code === 200) {
-      this.token = res.token
-      setToken(this.token)
-      message.success(res.message)
-    } else {
-      message.error(res.message)
-    }
+    // const res = await http.post('/login', form)
+    const res = await http.post('/authorizations', form)
+    this.token = res.data.token
+    setToken(this.token)
+    message.success('登录成功')
+  }
+
+  loginOut = () => {
+    this.token = ''
+    removeToken()
+    message.success('退出成功')
   }
 }
-
 
 export default LoginStore
