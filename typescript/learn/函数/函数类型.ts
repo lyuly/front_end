@@ -12,5 +12,13 @@ function buildName(firstName: string, ...lastName: string[]): string {
   return firstName + ' ' + lastName.join(' ');
 }
 
-let name = buildName('Bob', 'Smith', 'Tomas');
-console.log(name);
+let pname = buildName('Bob', 'Smith', 'Tomas');
+console.log(pname);
+
+interface Fn {
+  (key1: number, key2: number): number
+}
+
+const sum: Fn = (x, y) => x * y
+
+console.log(sum(1, 2));
