@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黑暗模式</title>
+  <style>
+    #btn {
+      border: 0;
+      border-radius: 1px;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <button id="btn">☀️</button>
+  </div>
+
+  <script>
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click', e => {
+      const body = document.body
+      if (e.target.innerHTML === '🌙') {
+        body.style.backgroundColor = 'white'
+        body.style.color = 'white'
+        e.target.innerHTML = '☀️'
+      } else {
+        body.style.backgroundColor = 'black'
+        body.style.color = 'black'
+        e.target.innerHTML = '🌙'
+      }
+    })
+  </script>
+</body>
+</html>

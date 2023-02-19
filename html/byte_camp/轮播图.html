@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>轮播图</title>
+  <style>
+    #app {
+      position: relative;
+      width: 820px;
+    }
+
+    .app-list ul {
+      list-style-type: none;
+      position: relative;
+      padding: 0;
+      margin: 0;
+    }
+
+    .app-list__item,
+    .app-list__item-selected {
+      position: absolute;
+      transition: opaticy 1s;
+      opacity: 0;
+      text-align: center;
+    }
+
+    .app-list__item-selected {
+      transition: opacity 1s;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="app-list">
+    <ul>
+      <li class="app-list__item-selected">
+        <img src="https://images.unsplash.com/photo-1617709612173-d820eb8b862f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60">
+      </li>
+      <li class="app-list__item">
+        <img src="https://images.unsplash.com/photo-1666705040497-1890be6e357c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80">
+      </li>
+      <li class="app-list__item">
+        <img src="https://images.unsplash.com/photo-1674318012388-141651b08a51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80">
+      </li>
+      <li class="app-list__item">
+        <img src="https://images.unsplash.com/photo-1674240568812-d7481f3699a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1828&q=80">
+      </li>
+    </ul>
+  </div>
+
+  <script type="text/javascript">
+    class app {
+      constructor(id) {
+        this.container = document. getElementById(id);
+        this.items = this.container
+          .querySelectorAll('.app-list__item,.app-list__item--selected');
+      }
+      
+      getSelectedItem() {
+        const selected = this.container
+          querySelector('.app-list__item--selected');
+        return selected
+      }
+      
+      getSelectedItemIndex() {
+        return Array.from(this. items).indexof(this.getSelectedItem());
+      }
+
+      slideTo(idx) {
+        const selected = this.getSelectedItem();
+        if(selected){
+          selected.className = "app-list__item";
+        }
+        const item = this.items[idx];
+        if(item) {
+          item.className = 'app-list__item--selected';
+        }
+      }
+      
+      slideNext(){
+        const currentIdx = this.getSelectedItemIndex();
+        const nextIdx = (currentIdx + 1)% this.items.Length;
+        this.slideTo(nextIdx);
+      }
+
+      slidePrevious(){
+        const currentIdx = this.getSelectedItemIndex();
+        const previousIdx = (this. items. Length + currentIdx - 1) % this.items.Length;
+        this.slideTo( previousIdx);
+      }
+    }
+  </script>
+</body>
+</html>
