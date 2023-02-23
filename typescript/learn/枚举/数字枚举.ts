@@ -1,13 +1,13 @@
 #!/usr/bin/env bun
 
 enum Direction {
-  Up = 1,
-  Down,
-  Left,
-  Right
+  UpX = 1,
+  DownX,
+  LeftX,
+  RightX
 }
 
-console.log(`Up: ${Direction.Up} Down: ${Direction.Down} Left: ${Direction.Left} Right: ${Direction.Right}`);
+console.log(`Up: ${Direction.UpX} Down: ${Direction.DownX} Left: ${Direction.LeftX} Right: ${Direction.RightX}`);
 
 enum Answer {
   No = 0,

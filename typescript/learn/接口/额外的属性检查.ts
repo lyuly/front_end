@@ -3,7 +3,7 @@ interface Person1 {
   age?: number;
 }
 
-function fn(config: Person1): {name: string, age: number} {
+function fn5(config: Person1): {name: string, age: number} {
   let newP = {name: 'pig', age: 1};
   if (config.name) {
     newP.name = config.name;
@@ -16,5 +16,5 @@ function fn(config: Person1): {name: string, age: number} {
   return newP;
 }
 
-let p2 = fn({name: 'fff', age: 18} as Person1);
+let p2 = fn5({name: 'fff', age: 18} as Person1);
 console.log(p2);

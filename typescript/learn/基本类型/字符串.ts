@@ -1,5 +1,5 @@
 let s: string = 'Hello, TypeScript☺️';
-let str: string = `Welcome to Changchun, jluer📚`;
+let str1: string = `Welcome to Changchun, jluer📚`;
 
 console.log(s);
-console.log(str);
+console.log(str1);

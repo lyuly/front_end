@@ -1,8 +1,8 @@
 #!/usr/bin/env bun
 
-function Person(p: {name: string, age: number}[]): number;
-function Person(name: string, age: number);
-function Person(p): any {
+function PersonC(p: {name: string, age: number}[]): number;
+function PersonC(name: string, age: number): void;
+function PersonC(p: any): any {
   if (typeof p === 'object') {
     let ans = Math.floor(Math.random() * p.age);
     return ans;

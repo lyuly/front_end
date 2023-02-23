@@ -1,8 +1,8 @@
 #!/usr/bin/env bun
 
 class Calculator<T> {
-  initValue: T;
-  add: (x: T, y: T) => T;
+  initValue!: T;
+  add!: (x: T, y: T) => T;
 }
 
 let calculator = new Calculator<number>();

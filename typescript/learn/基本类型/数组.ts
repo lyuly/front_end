@@ -5,7 +5,7 @@ interface Arr {
   [key: number]: number
 }
 
-const arr: Arr = [1, 2, 3]
+const arr3: Arr = [1, 2, 3]
 
 console.log(list);
 console.log(list2);

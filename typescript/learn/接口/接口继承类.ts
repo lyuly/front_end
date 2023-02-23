@@ -14,9 +14,9 @@ class TextBox extends Control {
   select() {}
 }
 
-class Image implements SelectableControl {
-  select(): void {}
-}
+// class Image implements SelectableControl {
+//   select(): void {}
+// }
 
 class Location1 {
   

@@ -49,7 +49,7 @@ class Horse extends Animal {
   }
 } */
 
-class Person {
+class PersonX {
   name: string;
   
   constructor(theName: string) {
@@ -61,7 +61,7 @@ class Person {
   }
 }
 
-class School extends Person {
+class SchoolX extends PersonX {
   age: number;
   sex: string;
 
@@ -80,6 +80,6 @@ class School extends Person {
   }
 }
 
-const p = new School('pig', 1, '男');
+const p = new SchoolX('pig', 1, '男');
 p.eat()
 p.sleep();

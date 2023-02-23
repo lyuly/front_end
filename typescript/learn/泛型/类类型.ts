@@ -5,23 +5,23 @@ function create<T>(c: {new(): T;}): T {
 }
 
 class BeeKeeper {
-  hasMask: boolean;
+  hasMask!: boolean;
 }
 
 class ZooKeeper {
-  nametag: string;
+  nametag!: string;
 }
 
 class Animal {
-  numLegs: number;
+  numLegs!: number;
 }
 
 class Bee extends Animal {
-  keeper: BeeKeeper;
+  keeper!: BeeKeeper;
 }
 
 class Lion extends Animal {
-  keeper: ZooKeeper;
+  keeper!: ZooKeeper;
 }
 
 function createInstance<A extends Animal>(c: new() => A): A {

@@ -4,19 +4,19 @@ interface Person {
   sex?: string;
 }
 
-const obj: Person = {
+const obj1: Person = {
   name: 'nnn',
   age: 18
 }
 
-console.log(obj.name);
-console.log(obj['name']);
+console.log(obj1.name);
+console.log(obj1['name']);
 
 let key: keyof Person;
 
-for (key in obj) {
-  if (Object.prototype.hasOwnProperty.call(obj, key)) {
-    const element = obj[key];
+for (key in obj1) {
+  if (Object.prototype.hasOwnProperty.call(obj1, key)) {
+    const element = obj1[key];
     console.log(element);
   }
 }

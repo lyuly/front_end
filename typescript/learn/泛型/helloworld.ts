@@ -1,8 +1,8 @@
 #!/usr/bin/env bun
 
-function identity<T>(arg: T): T {
+function identity2<T>(arg: T): T {
   return arg;
 }
 
-let str = identity('Hello, World!');
+let str = identity2('Hello, World!');
 console.log(str);

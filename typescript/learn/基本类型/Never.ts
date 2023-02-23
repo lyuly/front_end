@@ -13,3 +13,12 @@ function infiniteLoop(): never {
   while (true) {
   }
 }
+
+function fooY(x: string | number): boolean {
+  if (typeof x === 'string') {
+    return true
+  } else if (typeof x === 'number') {
+    return false
+  }
+  return error('type error')
+}

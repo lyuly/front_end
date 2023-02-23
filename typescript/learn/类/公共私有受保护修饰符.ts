@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 
-class Animal {
+class AnimalY {
   public name: string;
   
   public constructor(theName: string) {
@@ -35,14 +35,14 @@ console.log(jlu.getName());
 jlu.setName('nju');
 console.log(jlu.getName());
 
-class Person {
+class PersonY {
   protected name: string;
   constructor(name: string) {
     this.name = name;
   }
 }
 
-class Employee extends Person {
+class Employee extends PersonY {
   private department: string;
 
   constructor(name: string, department: string) {
@@ -57,4 +57,4 @@ class Employee extends Person {
 
 let howard = new Employee("howard", 'Sales');
 console.log(howard.getElevatorPitch());
-console.log(howard.name);
+// console.log(howard.name);

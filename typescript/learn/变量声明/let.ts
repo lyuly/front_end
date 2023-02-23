@@ -2,7 +2,7 @@
 
 let hello = 'Hello!';
 
-function f(input: boolean) {
+function f1(input: boolean) {
   let a: number = 100;
 
   if (input) {
@@ -13,10 +13,10 @@ function f(input: boolean) {
   return b;
 }
 
-console.log(f(true));
+console.log(f1(true));
 // console.log(f(false));
 
-function sumMatrix(matrix: number[][]) {
+function sumMatrix1(matrix: number[][]) {
   let sum = 0;
   for (let i = 0; i < matrix.length; i++) {
       var currentRow = matrix[i];
@@ -30,7 +30,7 @@ function sumMatrix(matrix: number[][]) {
 
 const arr1: number[][] = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
-console.log(sumMatrix(arr1));
+console.log(sumMatrix1(arr1));
 
 for (let i = 0; i < 10 ; i++) {
   setTimeout(function() {console.log(i); }, 100 * i);

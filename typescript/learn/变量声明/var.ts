@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 
-var a: number = 10;
+var a5: number = 10;
 
 // function f() {
 //   var message: string = 'Hello, world!';
@@ -10,7 +10,7 @@ var a: number = 10;
 // console.log(a);
 // console.log(f());
 
-function fn() {
+function fn2() {
   var a = 10;
   return function g() {
     var b = a + 1;
@@ -18,18 +18,18 @@ function fn() {
   }
 }
 
-var g = fn();
+var g = fn2();
 // console.log(g());
 
-function f(shouldInitialize: boolean) {
+function f2(shouldInitialize: boolean) {
   if (shouldInitialize) {
     var x: number = 10;
   }
-  return x;
+  // return x;
 }
 
-console.log(f(true));
-console.log(f(false));
+console.log(f2(true));
+console.log(f2(false));
 
 function sumMatrix(matrix: number[][]) {
   var sum = 0;
@@ -42,8 +42,8 @@ function sumMatrix(matrix: number[][]) {
   return sum;
 }
 
-let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-console.log(sumMatrix(arr));
+let arr6 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+console.log(sumMatrix(arr6));
 
 // for (var i = 0; i < 10; i++) {
 //   setTimeout(

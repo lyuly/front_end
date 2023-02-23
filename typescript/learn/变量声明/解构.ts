@@ -1,16 +1,14 @@
-#!/usr/bin/env bun
-
 let input: number[] = [1, 2];
-let [first, second] = input;
-console.log(first);
-console.log(second);
+let [firstX, secondX] = input;
+console.log(firstX);
+console.log(secondX);
 
 function f([first, second]: [number, number]) {
   console.log(first)
   console.log(second);
 }
 
-f(input);
+// f(input);
 
 let [third, ... rest] = [1, 2, 3, 4];
 console.log(third);

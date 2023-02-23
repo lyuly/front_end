@@ -19,6 +19,6 @@ interface Fn {
   (key1: number, key2: number): number
 }
 
-const sum: Fn = (x, y) => x * y
+const sum1: Fn = (x, y) => x * y
 
-console.log(sum(1, 2));
+console.log(sum1(1, 2));

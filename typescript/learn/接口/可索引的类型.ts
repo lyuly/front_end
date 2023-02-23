@@ -33,4 +33,4 @@ interface ReadonlyStringArray {
 }
 
 let myArr: ReadonlyStringArray = ["Alice", 'Bob'];
-myArr[2] = "Mallory";
+// myArr[2] = "Mallory";

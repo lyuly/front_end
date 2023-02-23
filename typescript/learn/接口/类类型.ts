@@ -16,7 +16,7 @@ interface ClockConstructor {
 }
 
 interface ClockInterface {
-  tick();
+  tick1():any;
 }
 
 function createClock(ctor: ClockConstructor, hour: number, minute: number): ClockInterface {
@@ -25,6 +25,9 @@ function createClock(ctor: ClockConstructor, hour: number, minute: number): Cloc
 
 class DigitalClock implements ClockInterface {
   constructor(h: number, m: number) {}
+  tick1() {
+    throw new Error("Method not implemented.");
+  }
   tick() {
     console.log("beep beep");
   }
@@ -32,6 +35,9 @@ class DigitalClock implements ClockInterface {
 
 class AnalogClock implements ClockInterface {
   constructor(h: number, m: number) {}
+  tick1() {
+    throw new Error("Method not implemented.");
+  }
   tick() {
     console.log("tick tock");
   }

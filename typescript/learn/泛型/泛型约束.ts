@@ -4,14 +4,14 @@ interface LengthWise {
   length: number;
 }
 
-function loggingIdentity<T extends LengthWise>(arg: T): T {
+function loggingIdentity1<T extends LengthWise>(arg: T): T {
   console.log(arg.length);
   return arg;
 }
 
-console.log(loggingIdentity([1, 2, 3]));
+console.log(loggingIdentity1([1, 2, 3]));
 
-function getProperty(obj: T, key: K) {
+function getProperty(obj: any, key: any) {
   return obj[key];
 }
 

@@ -27,8 +27,8 @@ class AccountingDepartment extends Department {
 }
 
 let department: Department;
-department = new Department();
+// department = new Department();
 department = new AccountingDepartment();
 department.printName();
 department.printMeeting();
-department.generateReports();
+// department.generateReports();
