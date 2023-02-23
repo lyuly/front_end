@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 interface Shape {
   color: string;
 }

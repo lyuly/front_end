@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 enum Color {Red, Green, Blue}
 let c: Color = Color.Green;
 

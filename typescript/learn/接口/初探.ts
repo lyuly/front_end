@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 /* function printLabel(labelledObj: { label: string}) {
   console.log(labelledObj.label);
 }
@@ -11,6 +9,11 @@ printLabel(myObj); */
 interface LabelledValue {
   label: string;
 }
+
+// 示例 a
+// declare const myLabelledValue: { label: string }
+
+declare const myLabelledValue: LabelledValue
 
 function printLabel(labelledObj: LabelledValue) {
   console.log(labelledObj.label);

@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 interface Person {
   name: string;
   age: number;

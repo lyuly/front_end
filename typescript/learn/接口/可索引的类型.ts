@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 interface StringArray {
   [index: number]: string;
 }
@@ -14,8 +12,8 @@ interface NumberArr {
   [index: number]: number;
 }
 
-let arr: NumberArr = [1, 2, 3, 4, 5];
-console.log(arr[1]);
+let arr2: NumberArr = [1, 2, 3, 4, 5];
+console.log(arr2[1]);
 
 /* class Animal {
   name: string;

@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 class Control {
   private state: any;
 }
@@ -20,6 +18,6 @@ class Image implements SelectableControl {
   select(): void {}
 }
 
-class Location {
+class Location1 {
   
 }

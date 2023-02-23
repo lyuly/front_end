@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 interface SearchFunc {
   (source: string, subString: string): boolean;
 }

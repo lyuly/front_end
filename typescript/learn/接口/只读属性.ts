@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 interface Point {
   readonly x: number;
   readonly y: number;

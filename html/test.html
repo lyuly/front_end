@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+</head>
+<body>
+  <div class="app"></div>
+
+  <script type="text/javascript">
+    const root = document.getElementsByClassName('app')[0]
+    const p = document.createElement('p')
+    p.innerText = 'ok'
+    // root.appendChild(p)
+
+    const roo1 = document.querySelector('div')
+    roo1.appendChild(p)
+
+    setTimeout(() => {
+      roo1.removeChild(p)
+    }, 5000)
+  </script>
+</body>
+</html>

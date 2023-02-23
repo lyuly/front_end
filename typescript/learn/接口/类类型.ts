@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 // interface ClockInterface {
 //   currentTime: Date;
 //   setTime(d: Date): void;

@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 // 返回的never函数必须存在无法到达的终点
 function error(message: string): never {
   throw new Error(message);

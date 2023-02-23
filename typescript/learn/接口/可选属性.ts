@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 interface SquareConfig {
   color?: string;
   width?: number;

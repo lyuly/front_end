@@ -1,11 +1,9 @@
-#!/usr/bin/env bun
-
-interface Person {
+interface Person1 {
   name?: string;
   age?: number;
 }
 
-function fn(config: Person): {name: string, age: number} {
+function fn(config: Person1): {name: string, age: number} {
   let newP = {name: 'pig', age: 1};
   if (config.name) {
     newP.name = config.name;
@@ -18,5 +16,5 @@ function fn(config: Person): {name: string, age: number} {
   return newP;
 }
 
-let p = fn({name: 'fff', age: 18} as Person);
-console.log(p);
+let p2 = fn({name: 'fff', age: 18} as Person1);
+console.log(p2);

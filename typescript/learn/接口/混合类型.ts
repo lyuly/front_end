@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 interface Counter {
   (start: number): string;
   interval: number;
@@ -13,7 +11,7 @@ function getCounter(): Counter {
   return counter;
 }
 
-let c = getCounter();
-c(10);
-c.reset();
-c.interval = 5.0;
+let c3 = getCounter();
+c3(10);
+c3.reset();
+c3.interval = 5.0;

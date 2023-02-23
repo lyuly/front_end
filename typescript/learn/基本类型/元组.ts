@@ -1,5 +1,5 @@
-#!/usr/bin/env bun
+let xlist: [string, number]
+xlist = ['hello', 10]
 
-let x: [string, number];
-x = ['hello', 10];
-console.log(x[0].substring(1));
+const [word, num] = xlist
+console.log(`${word} ${num}`)
