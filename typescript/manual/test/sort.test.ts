@@ -7,6 +7,7 @@ import { mergeSort } from "../src/sort/mergeSort/mergeSort"
 import { quickSortBasic } from "../src/sort/quickSort/quickSortBasic"
 import { quickSort } from "../src/sort/quickSort/quickSort"
 import { heapSort } from "../src/sort/heapSort/heapSort"
+import { countSort } from "../src/sort/countSort/countSort"
 
 const arr = [1, 4, 3, 2, 0]
 const res = [0, 1, 2, 3, 4]
@@ -64,5 +65,11 @@ describe('quickSort', () => {
 describe('heapSort', () => {
   test('arr sort to res', () => {
     expect(heapSort(arr)).toEqual(res)
+  })
+})
+
+describe('countSort', () => {
+  test('arr sort to res', () => {
+    expect(countSort(arr)).toEqual(res)
   })
 })
