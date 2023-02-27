@@ -1,0 +1,13 @@
+@import 'var';
+@import 'theme';
+@import 'mixin';
+
+p {
+  color: $font-base-color;
+  font-weight: $font-weight;
+  border-color: $border-color;
+}
+
+button {
+  @include btn;
+}

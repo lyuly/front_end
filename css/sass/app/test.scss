@@ -1,0 +1,45 @@
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+  }
+}
+
+@mixin atn($color, $bg-color, $bd-color) {
+  color: $color;
+  background-color: $bg-color;
+  border-color: $bd-color;
+}
+
+%alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.alert-info {
+  @extend %alert;
+  @include atn(#31708f, #d9edf7, #bce8f1);
+}
+
+.alert-success {
+  @extend %alert;
+  @include atn(#3c763d, #dff08d, #d6e9c6);
+}
+
+.alert-warning {
+  @extend %alert;
+  @include atn(#8a6d3b, #fcf8e3, #faebcc);
+}
+
+.alert-danger {
+  @extend %alert;
+  @include atn(#a94442, #f2dede, #ebccd1);
+}
