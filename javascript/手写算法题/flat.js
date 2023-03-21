@@ -19,5 +19,14 @@ function flat1(arr) {
   }, [])
 }
 
+function flat2(arr) {
+  while (arr.some(item => Array.isArray(item))) {
+    arr = [].concat(...arr);
+  }
+  return arr
+}
+
 const arr1 = [1, [2, [3]]]
 console.log(flat1(arr1))
+
+console.log(flat2(arr1))

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>image加载</title>
+</head>
+<body>
+  <script>
+    const root = document.body
+
+    const imageAsync = (url) => {
+      return new Promise((resolve, reject) => {
+        let image = new Image()
+        image.src = url
+        image.style.width = '600px'
+        image.style.height = '400px'
+        image.style.objectFit = 'cover'
+
+        image.addEventListener('load', () => {
+          console.log('图片加载成功')
+          resolve(image)
+        })
+
+        image.addEventListener('error', (err) => {
+          console.log('加载失败')
+          reject(err)
+        })
+      })
+    }
+
+    const urls = ['https://images.unsplash.com/photo-1615254295718-dd6994353b5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1829&q=80',
+  'https://images.unsplash.com/photo-1678319167262-cdb624958576?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80',
+  'https://images.unsplash.com/photo-1678307746237-c06bb9531298?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80',
+  'https://images.unsplash.com/photo-1678296489068-3c311c2e1299?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80']
+
+    urls.forEach(url => {
+      imageAsync(url)
+      .then((res) => {
+        root.appendChild(res)
+        console.log('加载成功')
+      }).catch(e => {
+        console.log('加载失败')
+      })
+    })
+  </script>
+</body>
+</html>

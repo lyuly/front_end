@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "npm run dev",
+    "start": "pnpm run dev",
     "dev": "webpack server --config ./webpack.config.js",
     "build": "webpack --config ./webpack.config.js"
   },

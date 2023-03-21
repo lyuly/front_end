@@ -10,7 +10,7 @@ import randomArr from '../../randomArr'
 维护指针 lt 使得 a[lo...lt - 1] 中的元素都小于v
 另一个指针 gt 使得 a[gt + 1...hi]中的元素都大于v
 
-a[i] < v, exch(a[lt], a[i]) lt-- i--
+a[i] < v, exch(a[lt], a[i]) lt++ i++
 a[i] > v, exch(a[gt], a[i]) gt--
 a[i] === v, i++
 */

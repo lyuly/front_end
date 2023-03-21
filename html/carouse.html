@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>轮播图</title>
+    <style>
+      .slider {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        height: 50vw;
+        max-height: 600px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .slides {
+        display: flex;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+        -webkit-transition: transform 0.5s ease-in-out;
+      }
+
+      .slides img {
+        display: block;
+        height: 100%;
+        min-height: 300px;
+        max-height: 600px;
+        flex-shrink: 0;
+      }
+
+      .controls {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px 0;
+      }
+
+      button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="slides">
+        <img src="image/image.jpg" />
+        <img src="image/image2.jpg" />
+        <img src="image/image3.jpg" />
+        <img src="image/image4.jpg" />
+      </div>
+      <div class="controls">
+        <button class="prev">pre</button>
+        <button class="next">next</button>
+      </div>
+    </div>
+
+    <script>
+      const slider = document.querySelector(".slider");
+      const slides = slider.querySelector(".slides");
+      const prevBtn = slider.querySelector(".prev");
+      const nextBtn = slider.querySelector(".next");
+      let slideWidth = slides.querySelector("img").clientWidth;
+      let intervalTime = 5000;
+      let slideIndex = 0;
+
+      function showSlide(index) {
+        slides.style.transform = `translateX(-${index * slideWidth}px)`;
+      }
+
+      function nextSlide() {
+        slideIndex++;
+        if (slideIndex >= slides.children.length) {
+          slideIndex = 0;
+        }
+        showSlide(slideIndex);
+      }
+
+      function prevSlide() {
+        slideIndex--;
+        if (slideIndex < 0) {
+          slideIndex = slides.children.length - 1;
+        }
+        showSlide(slideIndex);
+      }
+
+      let timer = setInterval(nextSlide, intervalTime);
+
+      slider.addEventListener("mouseenter", () => {
+        clearInterval(timer);
+      });
+
+      slider.addEventListener("mouseleave", () => {
+        timer = setInterval(nextSlide, intervalTime);
+      });
+
+      prevBtn.addEventListener("click", prevSlide);
+      nextBtn.addEventListener("click", nextSlide);
+    </script>
+  </body>
+</html>

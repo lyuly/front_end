@@ -1,0 +1,30 @@
+p {
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+}
+
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  box-sizing: border-box;
+  outline: none;
+  line-height: 1;
+  white-space: nowrap;
+  transition: .1s;
+  cursor: pointer;
+  background: #409eff;
+  padding: 12px 20px;
+  border: 1px solid #409eff;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+
+  &:hover {
+    background: rgb(64, 158, 255, 0.9);
+    border: 1px solid rgb(64, 158, 255, 0.9);
+  }
+}
