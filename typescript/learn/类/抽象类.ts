@@ -1,4 +1,9 @@
-#!/usr/bin/env bun
+#!/usr/bin/env ts-node
+
+/* 
+abstract 抽象类
+作用是作为实现所有抽象成员的子类的基类。
+*/
 
 abstract class Department {
   constructor(public name: string) {

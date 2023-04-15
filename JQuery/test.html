@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery-3.6.4.min.js"></script>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="root">root</div>
+  <div class="app">hello, jquery</div>
+
+  <div class="parent">
+    <!-- 子选择器 -->
+    <div class="child"></div>
+    <div class="child"></div>
+  </div>
+
+  <form id="myForm" name="myForm" method="post">
+    <input type="hidden" name="uno" value="9999" disabled />
+    姓名:<input type="text" id="uname" name="uname" /> <br/>
+    密码:<input type="password" id="upwd" name="upwd" value="123456" /> <br/>
+  </form>
+
+  <script type="text/javascript">
+    // let id = $('#root');
+    // console.log(id);
+
+    // let app = $('.app');
+    // console.log(app);
+
+    // let ch = $('.parent div');
+    // console.log(ch)
+
+    let text = $('#root');
+    text.addClass('red');
+    text.css('font-size', '20px')
+  </script>
+</body>
+</html>
