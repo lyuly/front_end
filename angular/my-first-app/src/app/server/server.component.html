@@ -1,0 +1,19 @@
+<p
+  [ngStyle]="{ backgroundColor: getColor() }"
+  [ngClass]="{ online: serverStatus === 'online' }"
+>
+  Server with ID {{ serverId }} is {{ getServerStatus() }}
+</p>
+
+<p *ngFor="let item of serverLists">{{ item }}</p>
+
+<button type="button" class="btn btn-primary" (click)="onToggleDetails()">
+  Display Details
+</button>
+<p *ngIf="showSecret">Secret Password = tuna</p>
+<div
+  *ngFor="let item of log"
+  [ngStyle]="{backgroundColor: item >= 5 ? 'blue' : 'transparent', color: item >= 5 ? 'white' : 'black'}"
+>
+  {{ item }}
+</div>
